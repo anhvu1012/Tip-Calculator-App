@@ -44,11 +44,19 @@
               <button type="submit" value="15">15%</button>
               <button type="submit" value="25">25%</button>
               <button type="submit" value="50">50%</button>
-              <button type="submit">Custom</button>
+              <input
+                type="text"
+                id="custom-tip"
+                name="custom-tip"
+                placeholder="Custom"
+              />
             </div>
           </section>
           <section>
-            <h4>Number of People</h4>
+            <div class="div-with-alert">
+              <span>Number of People</span>
+              <span id="alert-input"></span>
+            </div>
             <input
               type="text"
               id="total-people"
@@ -76,7 +84,7 @@
               <span>$4.27</span>
             </div>
           </section>
-          <button type="reset">Reset</button>
+          <button type="reset" disabled>Reset</button>
         </div>
       </div>
     </main>

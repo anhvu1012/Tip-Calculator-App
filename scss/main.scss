@@ -9,16 +9,27 @@ $grey-200: hsl(185, 41%, 84%);
 $grey-50: hsl(189, 47%, 97%);
 $white: hsl(0, 100%, 100%);
 
+$green-400-light: hsl(172, 67%, 75%);
+$green-900-light: hsl(183, 100%, 20%);
+$alert: rgb(255, 123, 0);
+
+@mixin flex-between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @mixin input-theme{
   display: inline-block;
   width: 100%;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border: none;
   border-radius: 5px;
   box-sizing: border-box;
 
   background-color: $grey-50;
 
+  font-family: $font-stack;
   font-size: 24px;
   font-weight: 700;
   color: $green-900;
@@ -32,6 +43,24 @@ $white: hsl(0, 100%, 100%);
   padding-left: 40px;
 }
 
+@mixin button-static ($bg, $color, $font-size){
+  background-color: $bg;
+  border: none;
+  border-radius: 5px;
+  color: $color;
+  font-size: $font-size;
+  font-family: $font-stack;
+  font-weight: 700;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  cursor: pointer;
+}
+
+html{
+  box-sizing: border-box;
+  height: 100%;
+}
+
 body, figure, h4, p, input{
   margin: 0;
   padding: 0;
@@ -40,6 +69,10 @@ body, figure, h4, p, input{
 body{
   background-color: $grey-200;
   font-family: $font-stack;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main{
@@ -54,15 +87,30 @@ main{
 
 .main-container{
   background-color: $white;
-  border-radius: 20px;
-  padding: 30px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 20px 20px 30px;
   
   .inputs{
+    padding: 10px;
+
     section {
       margin-bottom: 30px;
-      h4{
+      h4, .div-with-alert>span:first-child{
         color: $grey-500;
-        margin-bottom: 10px;
+      }
+
+      h4{
+        margin-bottom: 15px;
+      }
+
+      .div-with-alert{
+        @include flex-between;
+        margin-bottom: 5px;
+        #alert-input{
+          color: $alert;
+          font-size: 14px
+        }
       }
 
       input{
@@ -70,13 +118,11 @@ main{
 
         &::placeholder{
           font-family: $font-stack;
-          font-weight: 700;
           color: $grey-400;
         }
 
         &:focus {
-          border: 1px solid $green-400;
-          outline: none;
+          outline: 1px solid $green-400;
         }
       }
 
@@ -87,7 +133,87 @@ main{
       #total-people{
         @include input-bg(person);
       }
+
+      .alert{
+        outline: 1px solid $alert;
+      }
+      
+      .select-tip-buttons{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        >*{flex: 1 1 45%;}
+
+        button{
+          
+          @include button-static($green-900, $white, 22px);
+
+          &:hover{
+            background-color: $green-400;
+            color: $green-900;
+          }
+        
+          &:active{
+            background-color: $green-400-light;
+            color: $green-900;
+          }
+        }
+
+        input {
+          @include input-theme;
+          background-color: $grey-50;
+          &::placeholder{
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  .calculation-results{
+    background-color: $green-900;
+    padding: 25px;
+    border-radius: 15px;
+
+    section{
+      @include flex-between;
+      margin: 10px 0 30px;
+
+      div:first-child{
+        h4{
+          color: $grey-200;
+          font-size: 16px;
+        }
+        span{
+          color: $grey-400;
+          font-size: 13px;
+        }
+      }
+
+      div:last-child{
+        color: $green-400;
+        font-size: 35px;
+      }
+    }
+
+    button{
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-transform: uppercase;
+      @include button-static($green-400, $green-900, 20px);
+      
+      // static, not clickable
+      &:disabled{
+        @include button-static($green-900-light, $green-900, 20px);
+        cursor: auto;   
+      }
+
+      &:hover:enabled{
+        background-color: $green-400-light;
+        color: $green-900;
+      }
     }
   }
 }
-

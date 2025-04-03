@@ -1,3 +1,8 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
 body, figure, h4, p, input {
   margin: 0;
   padding: 0;
@@ -6,6 +11,10 @@ body, figure, h4, p, input {
 body {
   background-color: hsl(185, 41%, 84%);
   font-family: "Space Mono", sans-serif;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main figure {
@@ -17,24 +26,41 @@ main figure img {
 
 .main-container {
   background-color: hsl(0, 100%, 100%);
-  border-radius: 20px;
-  padding: 30px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 20px 20px 30px;
+}
+.main-container .inputs {
+  padding: 10px;
 }
 .main-container .inputs section {
   margin-bottom: 30px;
 }
-.main-container .inputs section h4 {
+.main-container .inputs section h4, .main-container .inputs section .div-with-alert > span:first-child {
   color: hsl(186, 14%, 43%);
-  margin-bottom: 10px;
+}
+.main-container .inputs section h4 {
+  margin-bottom: 15px;
+}
+.main-container .inputs section .div-with-alert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.main-container .inputs section .div-with-alert #alert-input {
+  color: rgb(255, 123, 0);
+  font-size: 14px;
 }
 .main-container .inputs section input {
   display: inline-block;
   width: 100%;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border: none;
   border-radius: 5px;
   box-sizing: border-box;
   background-color: hsl(189, 47%, 97%);
+  font-family: "Space Mono", sans-serif;
   font-size: 24px;
   font-weight: 700;
   color: hsl(183, 100%, 15%);
@@ -42,12 +68,10 @@ main figure img {
 }
 .main-container .inputs section input::placeholder {
   font-family: "Space Mono", sans-serif;
-  font-weight: 700;
   color: hsl(184, 14%, 56%);
 }
 .main-container .inputs section input:focus {
-  border: 1px solid hsl(172, 67%, 45%);
-  outline: none;
+  outline: 1px solid hsl(172, 67%, 45%);
 }
 .main-container .inputs section #total-bill {
   background-image: url("/images/icon-dollar.svg");
@@ -60,4 +84,109 @@ main figure img {
   background-position: 15px center;
   background-repeat: no-repeat;
   padding-left: 40px;
+}
+.main-container .inputs section .alert {
+  outline: 1px solid rgb(255, 123, 0);
+}
+.main-container .inputs section .select-tip-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.main-container .inputs section .select-tip-buttons > * {
+  flex: 1 1 45%;
+}
+.main-container .inputs section .select-tip-buttons button {
+  background-color: hsl(183, 100%, 15%);
+  border: none;
+  border-radius: 5px;
+  color: hsl(0, 100%, 100%);
+  font-size: 22px;
+  font-family: "Space Mono", sans-serif;
+  font-weight: 700;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  cursor: pointer;
+}
+.main-container .inputs section .select-tip-buttons button:hover {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+.main-container .inputs section .select-tip-buttons button:active {
+  background-color: hsl(172, 67%, 75%);
+  color: hsl(183, 100%, 15%);
+}
+.main-container .inputs section .select-tip-buttons input {
+  display: inline-block;
+  width: 100%;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: hsl(189, 47%, 97%);
+  font-family: "Space Mono", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: hsl(183, 100%, 15%);
+  text-align: right;
+  background-color: hsl(189, 47%, 97%);
+}
+.main-container .inputs section .select-tip-buttons input::placeholder {
+  text-align: center;
+}
+.main-container .calculation-results {
+  background-color: hsl(183, 100%, 15%);
+  padding: 25px;
+  border-radius: 15px;
+}
+.main-container .calculation-results section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 30px;
+}
+.main-container .calculation-results section div:first-child h4 {
+  color: hsl(185, 41%, 84%);
+  font-size: 16px;
+}
+.main-container .calculation-results section div:first-child span {
+  color: hsl(184, 14%, 56%);
+  font-size: 13px;
+}
+.main-container .calculation-results section div:last-child {
+  color: hsl(172, 67%, 45%);
+  font-size: 35px;
+}
+.main-container .calculation-results button {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  background-color: hsl(172, 67%, 45%);
+  border: none;
+  border-radius: 5px;
+  color: hsl(183, 100%, 15%);
+  font-size: 20px;
+  font-family: "Space Mono", sans-serif;
+  font-weight: 700;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  cursor: pointer;
+}
+.main-container .calculation-results button:disabled {
+  background-color: hsl(183, 100%, 20%);
+  border: none;
+  border-radius: 5px;
+  color: hsl(183, 100%, 15%);
+  font-size: 20px;
+  font-family: "Space Mono", sans-serif;
+  font-weight: 700;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  cursor: pointer;
+  cursor: auto;
+}
+.main-container .calculation-results button:hover:enabled {
+  background-color: hsl(172, 67%, 75%);
+  color: hsl(183, 100%, 15%);
 }/*# sourceMappingURL=main.css.map */
