@@ -1,5 +1,63 @@
-body {
+body, figure, h4, p, input {
   margin: 0;
   padding: 0;
+}
+
+body {
   background-color: hsl(185, 41%, 84%);
+  font-family: "Space Mono", sans-serif;
+}
+
+main figure {
+  text-align: center;
+}
+main figure img {
+  margin: 40px auto;
+}
+
+.main-container {
+  background-color: hsl(0, 100%, 100%);
+  border-radius: 20px;
+  padding: 30px;
+}
+.main-container .inputs section {
+  margin-bottom: 30px;
+}
+.main-container .inputs section h4 {
+  color: hsl(186, 14%, 43%);
+  margin-bottom: 10px;
+}
+.main-container .inputs section input {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: hsl(189, 47%, 97%);
+  font-size: 24px;
+  font-weight: 700;
+  color: hsl(183, 100%, 15%);
+  text-align: right;
+}
+.main-container .inputs section input::placeholder {
+  font-family: "Space Mono", sans-serif;
+  font-weight: 700;
+  color: hsl(184, 14%, 56%);
+}
+.main-container .inputs section input:focus {
+  border: 1px solid hsl(172, 67%, 45%);
+  outline: none;
+}
+.main-container .inputs section #total-bill {
+  background-image: url("/images/icon-dollar.svg");
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}
+.main-container .inputs section #total-people {
+  background-image: url("/images/icon-person.svg");
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  padding-left: 40px;
 }/*# sourceMappingURL=main.css.map */

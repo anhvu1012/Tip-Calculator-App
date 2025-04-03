@@ -26,15 +26,19 @@
         <img src="images/logo.svg" alt="Logo" />
       </figure>
       <div class="main-container" role="contentinfo">
-        <div role="group">
+        <div role="group" class="inputs">
           <section>
             <h4>Bill</h4>
-            <img src="images/icon-dollar.svg" alt="Dollar icon" />
-            <input type="text" id="total-bill" />
+            <input
+              type="text"
+              id="total-bill"
+              name="total-bill"
+              placeholder="0"
+            />
           </section>
           <section>
             <h4>Select Tip %</h4>
-            <div>
+            <div class="select-tip-buttons">
               <button type="submit" value="5">5%</button>
               <button type="submit" value="10">10%</button>
               <button type="submit" value="15">15%</button>
@@ -45,10 +49,15 @@
           </section>
           <section>
             <h4>Number of People</h4>
-            <input type="text" id="total-people" />
+            <input
+              type="text"
+              id="total-people"
+              name="total-people"
+              placeholder="0"
+            />
           </section>
         </div>
-        <div role="group">
+        <div role="group" class="calculation-results">
           <section>
             <div>
               <h4>Tip Amount</h4>

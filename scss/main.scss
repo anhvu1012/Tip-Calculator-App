@@ -9,8 +9,85 @@ $grey-200: hsl(185, 41%, 84%);
 $grey-50: hsl(189, 47%, 97%);
 $white: hsl(0, 100%, 100%);
 
-body{
+@mixin input-theme{
+  display: inline-block;
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+
+  background-color: $grey-50;
+
+  font-size: 24px;
+  font-weight: 700;
+  color: $green-900;
+  text-align: right;
+}
+
+@mixin input-bg($icon-name){
+  background-image: url('/images/icon-#{$icon-name}.svg'); 
+  background-position: 15px center; 
+  background-repeat: no-repeat; 
+  padding-left: 40px;
+}
+
+body, figure, h4, p, input{
   margin: 0;
   padding: 0;
-  background-color: $grey-200;
 }
+
+body{
+  background-color: $grey-200;
+  font-family: $font-stack;
+}
+
+main{
+  figure{
+    text-align: center;
+
+    img{
+      margin: 40px auto;
+    }
+  }
+}
+
+.main-container{
+  background-color: $white;
+  border-radius: 20px;
+  padding: 30px;
+  
+  .inputs{
+    section {
+      margin-bottom: 30px;
+      h4{
+        color: $grey-500;
+        margin-bottom: 10px;
+      }
+
+      input{
+        @include input-theme;
+
+        &::placeholder{
+          font-family: $font-stack;
+          font-weight: 700;
+          color: $grey-400;
+        }
+
+        &:focus {
+          border: 1px solid $green-400;
+          outline: none;
+        }
+      }
+
+      #total-bill{
+        @include input-bg(dollar);
+      }
+
+      #total-people{
+        @include input-bg(person);
+      }
+    }
+  }
+}
+
