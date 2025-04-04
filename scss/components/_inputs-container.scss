@@ -1,0 +1,83 @@
+@import '../mixins/mixins';
+@import '../variables/variables';
+
+
+.inputs{
+  padding: 10px;
+
+  section {
+    margin-bottom: 30px;
+    h4, .div-with-alert>span:first-child{
+      color: $grey-500;
+    }
+
+    h4{
+      margin-bottom: 15px;
+    }
+
+    .div-with-alert{
+      @include flex-between;
+      margin-bottom: 5px;
+      #alert-input{
+        color: $alert;
+        font-size: 14px
+      }
+    }
+
+    input{
+      @include input-theme;
+
+      &::placeholder{
+        font-family: $font-stack;
+        color: $grey-400;
+      }
+
+      &:focus {
+        outline: 1px solid $green-400;
+      }
+    }
+
+    #total-bill{
+      @include input-bg(dollar);
+    }
+
+    #total-people{
+      @include input-bg(person);
+    }
+
+    .alert{
+      outline: 1px solid $alert;
+    }
+    
+    .select-tip-buttons{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+
+      >*{flex: 1 1 45%;}
+
+      button{
+        
+        @include button-static($green-900, $white, 22px);
+
+        &:hover{
+          background-color: $green-400;
+          color: $green-900;
+        }
+      
+        &:active{
+          background-color: $green-400-light;
+          color: $green-900;
+        }
+      }
+
+      input {
+        @include input-theme;
+        background-color: $grey-50;
+        &::placeholder{
+          text-align: center;
+        }
+      }
+    }
+  }
+}

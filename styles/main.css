@@ -190,7 +190,7 @@ main figure img {
 
 @media screen and (min-width: 900px) {
   main {
-    margin: 130px auto auto;
+    margin: 100px auto;
     max-width: 900px;
   }
   main figure {

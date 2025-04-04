@@ -1,0 +1,48 @@
+@import '../mixins/mixins';
+@import '../variables/variables';
+
+.calculation-results{
+  background-color: $green-900;
+  padding: 25px;
+  border-radius: 15px;
+
+  section{
+    @include flex-between;
+    margin: 10px 0 30px;
+
+    div:first-child{
+      h4{
+        color: $grey-200;
+        font-size: 16px;
+      }
+      span{
+        color: $grey-400;
+        font-size: 13px;
+      }
+    }
+
+    div:last-child{
+      color: $green-400;
+      font-size: 35px;
+    }
+  }
+
+  button{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    @include button-static($green-400, $green-900, 20px);
+    
+    // static, not clickable
+    &:disabled{
+      @include button-static($green-900-light, $green-900, 20px);
+      cursor: auto;   
+    }
+
+    &:hover:enabled{
+      background-color: $green-400-light;
+      color: $green-900;
+    }
+  }
+}
