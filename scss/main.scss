@@ -56,10 +56,9 @@ $alert: rgb(255, 123, 0);
   cursor: pointer;
 }
 
-html{
-  box-sizing: border-box;
-  height: 100%;
-}
+// html{
+//   height: 100%;
+// }
 
 body, figure, h4, p, input{
   margin: 0;
@@ -73,6 +72,8 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  height: 100%;
 }
 
 main{
@@ -213,6 +214,96 @@ main{
       &:hover:enabled{
         background-color: $green-400-light;
         color: $green-900;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  main{
+    margin: 130px auto auto;
+    max-width: 900px;
+
+    figure{
+      margin-bottom: 40px;
+    }
+  }
+
+  .main-container{
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+    column-gap: 30px;
+    
+    >*{
+      flex: 1 1 45%;
+    }
+
+    .inputs{  
+      section {
+        margin-bottom: 40px;
+
+        .select-tip-buttons{
+          gap: 15px;
+  
+          >*{flex: 1 1 30%;}
+
+          button{
+            @include button-static($green-900, $white, 20px);
+          }
+
+          input {
+            padding: 5px;
+            &::placeholder{
+              text-align: center;
+              font-size: 22px;
+            }
+          }
+        }
+      }
+
+      section:last-child{
+        margin-bottom: 10px;
+      }
+    }
+
+    .calculation-results{
+      padding: 40px;
+      // @include flex-between;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  
+      section{
+        @include flex-between;
+        margin: 0 0 30px;
+  
+        div:first-child{
+          h4{
+            color: $grey-200;
+            font-size: 18px;
+          }
+          span{
+            color: $grey-400;
+            font-size: 15px;
+          }
+        }
+  
+        div:last-child{
+          color: $green-400;
+          font-size: 50px;
+        }
+      }
+  
+      button{
+        margin-top: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        &:disabled{
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
       }
     }
   }
