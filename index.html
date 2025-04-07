@@ -39,11 +39,11 @@
           <section>
             <h4>Select Tip %</h4>
             <div class="select-tip-buttons">
-              <button type="submit" value="5">5%</button>
-              <button type="submit" value="10">10%</button>
-              <button type="submit" value="15">15%</button>
-              <button type="submit" value="25">25%</button>
-              <button type="submit" value="50">50%</button>
+              <button id="5-tip" type="submit" value="5">5%</button>
+              <button id="10-tip" type="submit" value="10">10%</button>
+              <button id="15-tip" type="submit" value="15">15%</button>
+              <button id="25-tip" type="submit" value="25">25%</button>
+              <button id="50-tip" type="submit" value="50">50%</button>
               <input
                 type="text"
                 id="custom-tip"
@@ -72,7 +72,7 @@
               <span>/ person</span>
             </div>
             <div>
-              <span>$4.27</span>
+              <span id="tip-amount-per-person">$4.27</span>
             </div>
           </section>
           <section>
@@ -81,10 +81,10 @@
               <span>/ person</span>
             </div>
             <div>
-              <span>$4.27</span>
+              <span id="total-amount-per-person">$4.27</span>
             </div>
           </section>
-          <button type="reset" disabled>Reset</button>
+          <button id="reset-btn" type="reset" disabled>Reset</button>
         </div>
       </div>
     </main>

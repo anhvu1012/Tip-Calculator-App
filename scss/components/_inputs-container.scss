@@ -71,6 +71,11 @@
         }
       }
 
+      .active{
+        background-color: $green-400-light;
+        color: $green-900;
+      }
+
       input {
         @include input-theme;
         background-color: $grey-50;
