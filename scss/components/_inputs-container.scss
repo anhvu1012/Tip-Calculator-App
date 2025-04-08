@@ -46,7 +46,8 @@
     }
 
     .alert{
-      outline: 1px solid $alert;
+      // outline: 1px solid $alert;
+      border: 1px solid $alert;
     }
     
     .select-tip-buttons{
@@ -76,7 +77,7 @@
         color: $green-900;
       }
 
-      input {
+      input[type=text] {
         @include input-theme;
         background-color: $grey-50;
         &::placeholder{
