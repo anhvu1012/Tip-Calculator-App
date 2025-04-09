@@ -23,7 +23,7 @@
 }
 
 @mixin input-bg($icon-name){
-  background-image: url('/images/icon-#{$icon-name}.svg'); 
+  background-image: url('../images/icon-#{$icon-name}.svg'); 
   background-position: 15px center; 
   background-repeat: no-repeat; 
   padding-left: 40px;

@@ -71,13 +71,13 @@ main figure img {
   outline: 1px solid hsl(172, 67%, 45%);
 }
 .main-container .inputs section #total-bill {
-  background-image: url("/images/icon-dollar.svg");
+  background-image: url("../images/icon-dollar.svg");
   background-position: 15px center;
   background-repeat: no-repeat;
   padding-left: 40px;
 }
 .main-container .inputs section #total-people {
-  background-image: url("/images/icon-person.svg");
+  background-image: url("../images/icon-person.svg");
   background-position: 15px center;
   background-repeat: no-repeat;
   padding-left: 40px;
@@ -135,6 +135,7 @@ main figure img {
 }
 .main-container .inputs section .select-tip-buttons input[type=text]::placeholder {
   text-align: center;
+  font-size: 18px;
 }
 .main-container .calculation-results {
   background-color: hsl(183, 100%, 15%);
