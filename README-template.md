@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor]()
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/tip-calculator-app-B_YGYBPb9h)
 - Live Site URL: [GitHub Page](https://anhvu1012.github.io/Tip-Calculator-App/)
 
 ## My process
